@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
+  resources :spaceships do
+    resources :bookings, only: [:new, :create]
+  end
+  resources :bookings, only: [:show, :update]
 end
