@@ -11,9 +11,10 @@
   </head>
 
   <body>
+    <%= render "shared/navbar" %>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <h2>Hello <%= current_user.email %></h2>
+
   </body>
 </html>
