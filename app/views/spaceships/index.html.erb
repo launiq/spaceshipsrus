@@ -1,0 +1,28 @@
+<div class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1>Spaceships</h1>
+      <h3>Choose the spaceship of your dreams</h3>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <% @spaceships.each do |spaceship| %>
+            <h5 class="card-title"><%= spaceship.name %></h5>
+            <p class="card-text">Located in <%= spaceship.location %></p>
+            <p class="card-text">Rated by users: <%= spaceship.rating %></p>
+            <p class="card-text">€<%= spaceship.cost %>/day</p>
+            <a href="#" class="btn btn-primary">Select</a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
