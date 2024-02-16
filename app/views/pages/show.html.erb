@@ -10,11 +10,11 @@
           </tr>
           <tr>
             <th scope="row">Rating</th>
-            <td><%= @restaurant.rating %></td>
+            <td><%= @spaceship.rating %></td>
           </tr>
           <tr>
             <th scope="row">Cost</th>
-            <td><%= @restaurant.cost %></td>
+            <td><%= @spaceship.cost %></td>
           </tr>
         </tbody>
       </table>
@@ -38,12 +38,12 @@
         <% end %>
       </div>
 
-      <%= simple_form_for [@restaurant, @review] do |f| %>
+      <%= simple_form_for [@spaceship, @review] do |f| %>
         <%= f.input :rating, collection: 0..5 %>
         <%= f.input :content%>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
-      <%= link_to "See all restaurants", restaurants_path %>
+      <%= link_to "See all spaceships", spaceships_path %>
     </div>
   </div>
 </div>
