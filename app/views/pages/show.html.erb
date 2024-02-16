@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1><%= @spaceship.name %></h1>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row">Location</th>
+            <td><%= @spaceship.location %></td>
+          </tr>
+          <tr>
+            <th scope="row">Rating</th>
+            <td><%= @spaceship.rating %></td>
+          </tr>
+          <tr>
+            <th scope="row">Cost</th>
+            <td><%= @spaceship.cost %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="list-group">
+        <% @spaceship.reviews.each do |review| %>
+          <li class="list-group-item">
+            <small>
+              <% count = 0 %>
+              <% 5.times do %>
+                <% if review.rating > count %>
+                  <i class="fa-solid fa-star"></i>
+                <% else %>
+                  <i class="fa-regular fa-star"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </small>
+            <p><%= review.content %></p>
+          </li>
+        <% end %>
+      </div>
+
+      <%= simple_form_for [@spaceship, @review] do |f| %>
+        <%= f.input :rating, collection: 0..5 %>
+        <%= f.input :content%>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+      <%= link_to "See all spaceships", spaceships_path %>
+    </div>
+  </div>
+</div>
