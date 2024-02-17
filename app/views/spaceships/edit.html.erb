@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-dark bg-gradient px-5">
-  <%= link_to spaceships_path, class: "btn btn-outline-light" do %>
+  <%= link_to spaceship_path(@spaceship), class: "btn btn-outline-light" do %>
     <i class="fa-solid fa-rotate-left"></i> Return
   <% end %>
 </nav>
@@ -7,7 +7,7 @@
 <div class="container mt-5 py-5 bg-light border rounded shadow-sm">
   <div class="row justify-content-center">
     <div class="col-md-8">
-        <h2><strong>Post your spaceship </strong>🚀</h2>
+        <h2><strong>Update your spaceship details </strong>🚀</h2>
         <hr class="mb-4">
           <%= simple_form_for @spaceship do |f| %>
             <%= f.input :name %>
