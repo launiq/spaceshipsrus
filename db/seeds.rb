@@ -23,22 +23,28 @@ require 'faker'
 p "creating 10 users"
 20.times do
   user = User.new(
-    first_name:     Faker::Name.first_name,
-    last_name:      Faker::Name.last_name,
-    phone_number:   Faker::PhoneNumber.cell_phone,
-    email:          Faker::Internet.email
+    first_name:             Faker::Name.first_name,
+    last_name:              Faker::Name.last_name,
+    phone_number:           Faker::PhoneNumber.cell_phone,
+    email:                  Faker::Internet.email,
+    password:               "123456",
+    password_confirmation:  "123456"
   )
   user.save!
-  p "the user#{user.first_name} has just been created"
+  p "First Name:\t\t#{user.first_name}\n \
+      Last Name:\t\t#{user.last_name}\n \
+      Email:\t\t#{user.email}\n\n"
 end
 
 for user in User.all
   spaceship = Spaceship.new(
-    location:       Faker::Space.star_cluster,
-    name:           Faker::Space.launch_vehicle,
-    cost:           rand(1000..10000),
-    user: user
+    location:           Faker::Space.star_cluster,
+    name:               Faker::Space.launch_vehicle,
+    cost:               rand(1000..10000),
+    user:               user
   )
   spaceship.save!
-  p "the spaceship#{spaceship.name} of the cost of #{spaceship.cost}has just been created for the user#{user.first_name}"
+  p " Spaceship name:\t\t#{spaceship.name}\n
+      Cost:\t\t#{spaceship.cost}\n
+      Owner:\t\t#{user.first_name}\n\n"
 end
