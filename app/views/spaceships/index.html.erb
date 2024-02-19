@@ -7,22 +7,18 @@
   </div>
 </div>
 
-
 <div class="container">
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <% @spaceships.each do |spaceship| %>
+  <div class="row">
+    <% @spaceships.each do |spaceship| %>
+      <div class="co-12 col-sm-6 col-md-4 mb-3">
+          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"%>
             <h5 class="card-title"><%= spaceship.name %></h5>
             <p class="card-text">Located in <%= spaceship.location %></p>
             <p class="card-text">Rated by users: <%= spaceship.rating %></p>
             <p class="card-text">€<%= spaceship.cost %>/day</p>
             <%= link_to "Select", spaceship_path(spaceship) %>
-          <% end %>
-        </div>
+          </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
