@@ -19,7 +19,9 @@
         </tbody>
       </table>
 
-      <%= link_to "See all spaceships", spaceships_path %>
+      <%= link_to "Return to all spaceships", spaceships_path %>
+      <%= link_to "Edit", edit_spaceship_path(@spaceship) %>
+      <%= link_to "Delete", spaceship_path(@spaceship), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     </div>
   </div>
 </div>
