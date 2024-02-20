@@ -79,6 +79,6 @@ test:
 #
 production:
   <<: *default
-  database: spaceshipsrus_production
-  username: spaceshipsrus
+  database: d8hho7fdbsfs3o
+  username: bclonhwonmgafw
   password: <%= ENV["SPACESHIPSRUS_DATABASE_PASSWORD"] %>
