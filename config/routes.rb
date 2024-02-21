@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:show, :update]
+  resources :users, only: [:show]
 end
