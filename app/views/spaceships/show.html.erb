@@ -22,6 +22,12 @@
       <%= link_to "Return to all spaceships", spaceships_path %>
       <%= link_to "Edit", edit_spaceship_path(@spaceship) %>
       <%= link_to "Delete", spaceship_path(@spaceship), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+      <hr>
+
+      <div class="d-flex">
+        <h3>Would you like to book this spaceship? <strong><%= link_to "Do it here!", new_spaceship_booking_path(@spaceship), class: "animated-link" %></strong></h3>
+      </div>
     </div>
   </div>
 </div>
