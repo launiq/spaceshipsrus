@@ -13,6 +13,7 @@
 //homepage
 @import "pages/index";
 
+
 .animated-link {
   position: relative;
   color: #1e975f;
@@ -39,3 +40,6 @@
 .animated-link:hover::before {
   transform: scaleX(1);
 }
+
+//login
+@import "devise/login";
