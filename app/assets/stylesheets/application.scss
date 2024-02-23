@@ -15,12 +15,12 @@
 
 .animated-link {
   position: relative;
-  color: #0D6EFD;
+  color: #1e975f;
   text-decoration: none;
 }
 
 .animated-link:hover {
-  color: #0a4db1;
+  color: #0f603a;
 }
 
 .animated-link::before {
@@ -31,7 +31,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #0a4db1;
+  background-color: #0f603a;
   transform: scaleX(0);
   transition: transform 0.3s ease-in-out;
 }

@@ -8,8 +8,15 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
         <h2><strong>Book <span style="text-transform: uppercase;"><%= @spaceship.name %></span> now! </strong>🚀</h2>
-        <hr class="mb-4">
-        <p>this is a test</p>
+        <hr class="mb-3">
+        <h5 class="mb-4">Set the dates for your reservation:</h5>
+        <%= simple_form_for [@spaceship, @booking] do |f| %>
+          <div class="d-flex gap-3">
+            <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+            <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+          </div>
+          <%= f.button :submit, class: 'btn btn-sm btn-success' %>
+        <% end %>
     </div>
   </div>
 </div>
