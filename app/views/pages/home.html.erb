@@ -1,7 +1,29 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div id="outer">
+
+
+    <div id="home-top-video">
+
+      <div id="home-text">
+        <div class="centertext">
+          <h1 class= "my-4 text-center fw-bold">spaceshipsrus</h1>
+          <p>get your spaceships for you next travel</p>
+          <div>
+            <%= link_to "Discover spaceships", spaceships_path, class: "btn btn-outline-dark"  %>
+          </div>
+
+        </div>
+      </div>
+      <video autoplay loop muted width="100%">
+        <source src="/video/pexels-kindel-media.mp4" type="video/mp4" >
+      </video>
+    </div>
+  </div>
+
+
+
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
   <div class="container">
     <h1>Get your/rent your <strong>spaceship</strong> to <strong>get to your favorate planet</strong>!</h1>
-      <%= link_to "Discover all available spaceships", spaceships_path %>
-      <%= link_to "Post your spaceship", new_spaceship_path %>
+
   </div>
-</div>
+</div> %>
