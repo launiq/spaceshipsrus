@@ -15,6 +15,7 @@
 ## require faker
 require 'faker'
 
+
 ##SUDO
 # create 10 users
 # create 10 spaceships

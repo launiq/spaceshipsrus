@@ -1,0 +1,19 @@
+<%= render "shared/navbar" %>
+<div id="outer">
+    <div id="home-top-video">
+      <div id="home-text">
+        <div class="mainbox">
+          <div class="subbox-1">
+          <h1><%= current_user.first_name%></h1>
+          </div>
+          <div class="subbox-2">
+
+          <h1><%= @current_user.first_name%></h1>
+          </div>
+        </div>
+      </div>
+      <video autoplay loop muted width="100%">
+        <source src="/video/pexels_videos_4482.mp4" type="video/mp4" >
+      </video>
+    </div>
+  </div>
