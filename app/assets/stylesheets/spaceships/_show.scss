@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+body {
+  background-image: url('background_img.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.subnav {
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.return {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  color: whitesmoke;
+  text-decoration: none;
+  opacity: 0.7;
+  font-weight: 700;
+}
+
+.return:hover {
+  opacity: 1;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+}
