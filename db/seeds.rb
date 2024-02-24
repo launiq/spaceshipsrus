@@ -26,6 +26,7 @@ def fetch_random_rocket_image_url
 end
 
 # Rocket.create(..... image_url: fetch_random_rocket_image_url....)
+
 ##SUDO
 # create 10 users
 # create 10 spaceships
