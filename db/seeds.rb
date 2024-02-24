@@ -43,7 +43,7 @@ p "creating 10 users"
     password_confirmation:  "123456"
   )
   user.save!
-  p "First Name:\t\t#{user.first_name}\n \
+  puts "First Name:\t\t#{user.first_name}\n \
       Last Name:\t\t#{user.last_name}\n \
       Email:\t\t#{user.email}\n\n"
 end
@@ -57,7 +57,7 @@ for user in User.all
     image_url:          fetch_random_rocket_image_url
   )
   spaceship.save!
-  p " Spaceship name:\t\t#{spaceship.name}\n
+  puts " Spaceship name:\t\t#{spaceship.name}\n
       Cost:\t\t#{spaceship.cost}\n
       Owner:\t\t#{user.first_name}\n\n"
 end
