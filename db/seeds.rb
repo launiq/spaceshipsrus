@@ -14,7 +14,18 @@
 # create 10
 ## require faker
 require 'faker'
+require 'net/http'
+require 'json'
 
+def fetch_random_rocket_image_url
+  access_key = 'QtdL7d3ZYdpYG93LRVTz69p6guthSgo0qF5qnRJYrM4'
+  uri = URI("https://api.unsplash.com/photos/random/?query=rocket&client_id=#{access_key}")
+  response = Net::HTTP.get_response(uri)
+  data = JSON.parse(response.body)
+  data['urls']['regular']
+end
+
+# Rocket.create(..... image_url: fetch_random_rocket_image_url....)
 ##SUDO
 # create 10 users
 # create 10 spaceships
@@ -42,7 +53,8 @@ for user in User.all
     location:           Faker::Space.star_cluster,
     name:               Faker::Space.launch_vehicle,
     cost:               rand(1000..10000),
-    user:               user
+    user:               user,
+    image_url:          fetch_random_rocket_image_url
   )
   spaceship.save!
   p " Spaceship name:\t\t#{spaceship.name}\n
