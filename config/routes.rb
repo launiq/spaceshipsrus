@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show, :update]
   resources :users, only: [:show]
+  get "bookings/:id/accept", to: "bookings#accept", as: :accept_booking
+  get "bookings/:id/decline", to: "bookings#decline", as: :decline_booking
 end
