@@ -5,44 +5,70 @@
     <i class="fa-solid fa-angle-left"></i><span style="opacity: 0">-</span> <span>Return to all spaceships</span>
   <% end %>
 </div>
-<div class="container" style="border: 1px solid red">
+<div class="product-area">
   <div class="row">
-    <div class="col-8" style="border: 1px solid red; background-color: white;">
-      <div width="100%" style="background-color: pink;">image</div>
-      <div width="100%" style="background-color: green;">product</div>
+    <div class="col-7">
+
+      <div class="img-box">
+        <%= image_tag("spaceship_placeholder.jpg") %>
+      </div>
+      <hr style="color: transparent;">
+      <div class="descript-box">
+        <h2><strong><%= @spaceship.name %></strong></h2>
+        <h6><i class="fa-solid fa-location-dot"></i><span style="opacity: 0">-</span> <em><%= @spaceship.location %></em></h6>
+        <hr>
+        <div class="d-flex justify-content-between mb-2">
+          <div>
+            <% 4.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+            <% 1.times do %>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            <% end %>
+          </div>
+          <div>
+            <h4><strong><%= @spaceship.cost %> €/day</strong></h4>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="col-4" style="border: 1px solid red; background-color: white;">bookings</div>
+    <div class="col-5">
+      <div class="book-dates">
+        <h4><strong>Would you like to book this spaceship?</strong></h4>
+        <h6 style="opacity: 0.7"><i class="fa-solid fa-circle-info"></i><em> subject to availability and proprietor approval</em></h6>
+        <hr>
+        <div class="d-flex justify-content-center">
+          <%= simple_form_for [@spaceship, @booking] do |f| %>
+            <div class="d-flex gap-3">
+              <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+              <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+            </div>
+            <%= f.button :submit, class: 'space-btn', value: "Request Booking" %>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+      <div class="book-log">
+        <h5>Current reservations:</h5>
+        <hr>
+        <% if @spaceship.bookings.empty? %>
+          <p style="opacity: 0.7"><em>No reservations yet</em></p>
+        <% else %>
+          <ul class="list-group">
+            <% @spaceship.bookings.each do |booking| %>
+              <li class="list-group-item mb-1" style="background-color: rgba(255, 255, 255, 0.8)">
+                <i class="fa-regular fa-calendar-check"></i> <span style="font-weight: bold;"><%= booking.user.first_name %> <%= booking.user.last_name %></span> has booked this spaceship from <span style="font-weight: bold;"><%= booking.start_date %></span> to <span style="font-weight: bold;"><%= booking.end_date %></span>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
 <!--
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1><%= @spaceship.name %></h1>
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <th scope="row">Location</th>
-            <td><%= @spaceship.location %></td>
-          </tr>
-          <tr>
-            <th scope="row">Rating</th>
-            <td><%= @spaceship.rating %></td>
-          </tr>
-          <tr>
-            <th scope="row">Cost</th>
-            <td><%= @spaceship.cost %></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <%= link_to "Return to all spaceships", spaceships_path %>
-      <%= link_to "Edit", edit_spaceship_path(@spaceship) %>
-      <%= link_to "Delete", spaceship_path(@spaceship), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-
-      <hr>
-
       <div class="d-flex">
         <h3>Would you like to book this spaceship? <strong><%= link_to "Do it here!", new_spaceship_booking_path(@spaceship), class: "animated-link" %></strong></h3>
       </div>

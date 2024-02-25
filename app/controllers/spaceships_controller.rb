@@ -6,6 +6,8 @@ class SpaceshipsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    @booking.spaceship = @spaceship
   end
 
   def new
