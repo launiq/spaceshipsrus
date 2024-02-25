@@ -21,24 +21,78 @@ body {
 }
 .mainbox{
   display: flex;
-
   width: 100vw;
 }
 
 .subbox-1{
+  display: flex;
   background-color: #ffffff7c;
   text-align: center;
-  width: 30%;
-  background-color: $purple;
+  width: 70%;
+  border-radius: 15px;
+}
+.subbox-50{
+  width: 50%;
 }
 
 .subbox-2{
+  background-color: #ffffff6c;
   margin :10px;
   padding:20px;
+  width: 30%;
+}
+
+
+// spaceship card
+.displayflex{
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  padding-left: 400px;
+  height: 200px;
+  width: 500px;
+  overflow-x: scroll;
+  align-items: center;
+  scrollbar-width: none;
+  border-right: 1px solid ;
+  position: relative;
+  // background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(62,62,62,0) 6%, rgba(139,139,139,0) 95%, rgba(255,255,255,0) 100%);
+
+}
+
+
+
+
+
+
+
+
+.cardusershow{
   background-color: #ffffff6c;
-  width: 70%;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+  width: auto;
+  height: auto;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   text-align: center;
-  background-color: $purple;
+}
+
+.cardusershow:hover{
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.spaceshipcircle{
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ffffff;
+  filter: grayscale(90%);
+
 }
 
 #home-top-video:before {
