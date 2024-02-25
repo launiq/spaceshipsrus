@@ -1,9 +1,18 @@
 <%= render "shared/navbar" %>
 
-<div class= "subnav py-2 ps-2">
+<div class= "subnav mb-3 py-2 ps-2">
   <%= link_to spaceships_path, class: "return" do %>
     <i class="fa-solid fa-angle-left"></i><span style="opacity: 0">-</span> <span>Return to all spaceships</span>
   <% end %>
+</div>
+<div class="container" style="border: 1px solid red">
+  <div class="row">
+    <div class="col-8" style="border: 1px solid red; background-color: white;">
+      <div width="100%" style="background-color: pink;">image</div>
+      <div width="100%" style="background-color: green;">product</div>
+    </div>
+    <div class="col-4" style="border: 1px solid red; background-color: white;">bookings</div>
+  </div>
 </div>
 
 <!--
