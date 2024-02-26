@@ -1,63 +1,74 @@
 <%= render "shared/navbar" %>
 <div id="outer">
-    <div id="home-top-video">
-      <div id="home-text">
-        <div class="mainbox">
-          <div class="subbox-1">
-
-              <div class="subbox-50">
-                <h3 class ="my-3">Your spaceship</h3>
-                  <%=link_to "+", new_spaceship_path%>
-                  <div class="displayflex my-5">
-                    <% @user_spaceship.each do |spaceship| %>
-                      <div class="cardusershow">
-                        <img class="spaceshipcircle"  src="<%= spaceship.image_url %>" />
-
-                        <p><%= spaceship.name %></p>
-                         <%if spaceship.bookings.count == 0 %>
-                          <p class="text-danger">Not Booked</p>
-                          <% else %>
-                          <p class="text-success">Booked</p>
+  <div class="show-inner">
+    <div class="show-inner-spaceship">
+      <div class="spaceship">
+        <h1>your spaceship</h1>
+          <div class="cards">
+            <% @user_spaceship.each do |spaceship| %>
+              <div>
+                <%= link_to spaceship_path(spaceship), class: "spaceship-card-link" do %>
+                  <div class="card">
+                    <%= image_tag spaceship.image_url, alt: "Image of the spaceship", class: "spaceship-image" %>
+                    <div class="card-body">
+                      <div class="name-rating">
+                        <h5 class="card-title"><%= spaceship.name %></h5>
+                        <div>
+                          <% 5.times do %>
+                            <i class="fa-solid fa-star"></i>
                           <% end %>
+                          <p class="card-text"><%= spaceship.rating %></p>
+                        </div>
                       </div>
-                    <% end %>
-                  </div>
-              </div>
-              <div class="subbox-50">
-                <h3 class ="my-3">Your Booking</h3>
-                  <%= link_to "+", spaceships_path %>
-                    <div class="displayflex my-5">
-                      <% @user_bookings.each do |booking| %>
-                      <div class="cardusershow">
-                        <img class="spaceshipcircle"  src="<%= booking.spaceship.image_url %>" />
-
-                      </div>
-                      <% end %>
-
-
-
+                      <p class="card-text"><i class="fa-solid fa-location-dot"></i> <%= spaceship.location %></p>
+                      <p class="card-text">€<%= spaceship.cost %>/day</p>
                     </div>
-
-
-            </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
           </div>
-          <div class="subbox-2">
-          <h3>Your information</h3>
-          <p class ="my-1">First Name:</p>
-          <p class ="mb-2"><strong><%= current_user.first_name%></strong></p>
-          <p class ="my-1">Last Name:</p>
-          <p class ="mb-2"><strong><%= current_user.last_name%></strong></p>
-          <p class ="my-1">Email:</p>
-          <p class ="mb-2"><strong><%= current_user.email%></strong></p>
-          <p class ="my-1">number of ship:</p>
-          <p class ="mb-2"><strong><%= @user_spaceship.count%></strong></p>
-          <p class ="my-1">number of booking:</p>
-          <p class ="mb-2"><strong><%= @user_bookings.count%></strong></p>
-          </div>
-        </div>
       </div>
-      <video autoplay loop muted width="100%">
-        <source src="/video/pexels_videos_4482.mp4" type="video/mp4" >
-      </video>
+      <div class="spaceship">
+        <h1>your booking</h1>
+          <div class="cards">
+            <% @user_bookings.each do |booking| %>
+              <div>
+                <%= link_to spaceship_path(booking), class: "spaceship-card-link" do %>
+                  <div class="card">
+                    <%= image_tag booking.spaceship.image_url, alt: "Image of the spaceship", class: "spaceship-image" %>
+                    <div class="card-body">
+                      <div class="name-rating">
+                        <h5 class="card-title"><%= booking.spaceship.name %></h5>
+                        <div>
+                          <% 5.times do %>
+                            <i class="fa-solid fa-star"></i>
+                          <% end %>
+                          <p class="card-text"><%= booking.spaceship.rating %></p>
+                        </div>
+                      </div>
+                      <p class="card-text"><i class="fa-solid fa-location-dot"></i> <%= booking.spaceship.location %></p>
+                      <p class="card-text">€<%= booking.spaceship.cost %>/day</p>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+    <div class="show-inner-info">
+      <h1>Hi,
+      <%= @current_user.first_name %> <%= @current_user.last_name %>
+      </h1>
+      <p><%=@current_user.email %></p>
+
     </div>
   </div>
+  <div id="home-top-video-show">
+    </div>
+    <video autoplay loop muted width="100%" class="video-stick">
+      <source src="/video/pexels_videos_4482.mp4" type="video/mp4" >
+    </video>
+  </div>
+</div>
