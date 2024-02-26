@@ -29,6 +29,8 @@ gem "stimulus-rails"
 # Use faker to generate fake data
 gem "faker"
 
+gem "pg_search"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
