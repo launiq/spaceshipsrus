@@ -19,7 +19,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_24_115109) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status", default: "pending"
     t.date "start_date"
     t.date "end_date"
     t.index ["spaceship_id"], name: "index_bookings_on_spaceship_id"
