@@ -55,7 +55,7 @@ for user in User.all
     name:               Faker::Space.launch_vehicle,
     cost:               rand(1000..10000),
     user:               user,
-    image_url:          fetch_random_rocket_image_url
+    # image_url:          fetch_random_rocket_image_url
   )
   spaceship.save!
   # puts " Spaceship name:\t\t#{spaceship.name}\n
