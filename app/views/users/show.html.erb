@@ -3,7 +3,7 @@
   <div class="show-inner">
     <div class="show-inner-spaceship">
       <div class="spaceship">
-        <h1>your spaceship</h1>
+        <h1 class="title-show">your spaceship</h1>
           <div class="cards">
             <% @user_spaceship.each do |spaceship| %>
               <div>
@@ -62,7 +62,6 @@
       <%= @current_user.first_name %> <%= @current_user.last_name %>
       </h1>
       <p><%=@current_user.email %></p>
-
     </div>
   </div>
   <div id="home-top-video-show">

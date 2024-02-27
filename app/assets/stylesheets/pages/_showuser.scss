@@ -2,6 +2,11 @@ body {
   margin:0;
 }
 
+.title-show{
+  text-align: center;
+  margin: 0 auto;
+
+}
 
 .container-show{
   display: flex;
@@ -26,18 +31,19 @@ body {
   display: flex;
   justify-content: space-evenly;
   margin: 50px auto;
-  background-color: white;
+
 }
 
 .show-inner-info{
-  background-color: aquamarine;
+  background-color: rgba(255, 255, 255, 0.422);
+  backdrop-filter: blur(10px);
   width: 30%;
   padding: 67px;
   margin: 10px;
 }
 .show-inner-spaceship{
-
-  background-color: rgb(72, 44, 110);
+  background-color: rgba(255, 255, 255, 0.422);
+  backdrop-filter: blur(10px);
   padding: 90px;
   width: 70%;
   margin: 10px;
