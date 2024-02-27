@@ -8,28 +8,20 @@
   background-attachment: fixed;
 }
 
-.btn-container {
-  display: flex;
-  justify-content: space-between;
+.d-flex {
+  gap: 20px;
 }
 
-.btn-input-search {
-  width: 306px;
-  height: 60px;
-  flex-shrink: 0;
+.form-control {
   border-radius: 15px;
-  background: white;
-  color: gray;
+  height: 50px;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  margin: 0 auto;
-  vertical-align: middle;
-  text-align: center;
 }
 
+.form-control:hover {
+  border: 2px solid #000;
+  background-color: rgb(213, 215, 216);
+}
 
 .btn-search {
   padding: 8px 16px;
@@ -45,12 +37,25 @@
   text-decoration: none;
 }
 
+.btn-search:hover {
+  background: #F5F5F5;
+  color: #000;
+  border: 2px solid #000;
+}
+
 .card {
   height: 400px;
   border-radius: 15px;
   border: 1px solid #000;
   font-family: 'Space Grotesk', sans-serif;
   background-color: transparent;
+}
+
+.card:hover{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition-duration: 0.5s;
 }
 
 .card-body {
@@ -70,7 +75,7 @@
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 16px;
+  grid-gap: 30px;
 }
 
 .spaceship-card-link {
