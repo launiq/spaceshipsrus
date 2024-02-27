@@ -19,7 +19,7 @@
         <div>
           <%= link_to spaceship_path(spaceship), class: "spaceship-card-link" do %>
             <div class="card">
-              <%= image_tag "spaceship-placeholder.jpg", alt: "Image of the spaceship", class: "spaceship-image" %>
+              <%= image_tag spaceship.image_url, class: "spaceship-image" %>
               <div class="card-body">
                 <div class="name-rating">
                   <h5 class="card-title"><%= spaceship.name %></h5>
