@@ -10,6 +10,8 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  background: transparent;
+  color: #F5F5F5;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -30,6 +32,12 @@
   text-decoration: none;
 }
 
+.btn-rent:hover {
+  background: #F5F5F5;
+  color: #000;
+  border: 2px solid #000;
+}
+
 .navbar-brand {
   color:#F5F5F5;
 }
@@ -42,6 +50,13 @@
 
 .logo-group {
   gap: 20px;
+}
+
+.logo-group:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition-duration: 0.5s;
 }
 
 .dropdown-menu {
