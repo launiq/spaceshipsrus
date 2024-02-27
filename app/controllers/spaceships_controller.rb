@@ -10,6 +10,8 @@ class SpaceshipsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    @booking.spaceship = @spaceship
   end
 
   def new
@@ -46,7 +48,7 @@ class SpaceshipsController < ApplicationController
   private
 
   def spaceship_params
-    params.require(:spaceship).permit(:name, :location, :cost, :photo)
+    params.require(:spaceship).permit(:name, :location, :cost, :image_url)
   end
 
   def set_spaceship
