@@ -1,25 +1,42 @@
-<%= render "shared/navbar" %>
-<div class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-6 col-md-8 mx-auto">
-      <h1>Spaceships</h1>
-      <h3>Choose the spaceship of your dreams</h3>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <% @spaceships.each do |spaceship| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
-          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"%>
-            <h5 class="card-title"><%= spaceship.name %></h5>
-            <p class="card-text">Located in <%= spaceship.location %></p>
-            <p class="card-text">Rated by users: <%= spaceship.rating %></p>
-            <p class="card-text">€<%= spaceship.cost %>/day</p>
-            <%= link_to "Select", spaceship_path(spaceship) %>
-          </div>
-      </div>
+<body class="outer">
+  <%= render "shared/navbar" %>
+  <div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: spaceships_path, method: :get, class: "d-flex my-5" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type the name or location of the spaceship you are looking for..."
+        %>
+      <%= submit_tag "Search", name: "", class: "btn-search" %>
     <% end %>
   </div>
 </div>
+
+  <div class="container mt-4">
+    <div class="cards">
+      <% @spaceships.each do |spaceship| %>
+        <div>
+          <%= link_to spaceship_path(spaceship), class: "spaceship-card-link" do %>
+            <div class="card">
+              <%= image_tag "spaceship-placeholder.jpg", alt: "Image of the spaceship", class: "spaceship-image" %>
+              <div class="card-body">
+                <div class="name-rating">
+                  <h5 class="card-title"><%= spaceship.name %></h5>
+                  <div>
+                    <% 5.times do %>
+                      <i class="fa-solid fa-star"></i>
+                    <% end %>
+                    <p class="card-text"><%= spaceship.rating %></p>
+                  </div>
+                </div>
+                <p class="card-text"><i class="fa-solid fa-location-dot"></i> <%= spaceship.location %></p>
+                <p class="card-text">€<%= spaceship.cost %>/day</p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>

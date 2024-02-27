@@ -2,7 +2,11 @@ class SpaceshipsController < ApplicationController
   before_action :set_spaceship, only: [:show, :edit, :update]
 
   def index
-    @spaceships = Spaceship.all
+    if params[:query].present?
+      @spaceships = Spaceship.search_by_name_and_location(params[:query])
+    else
+      @spaceships = Spaceship.all
+    end
   end
 
   def show

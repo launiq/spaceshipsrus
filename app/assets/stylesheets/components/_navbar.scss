@@ -1,12 +1,65 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  color: black;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-weight: bold;
+  background: transparent;
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(139, 139, 139, 0.565) 76%, rgba(255,255,255,0) 100%);
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  background: transparent;
+  color: #F5F5F5;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.btn-rent {
+  padding: 8px 30px;
+  border-radius: 15px;
+  background: #000;
+  color: #F5F5F5;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  margin: 0 auto;
+  border: 1px solid #F5F5F5;
+  text-decoration: none;
+}
+
+.btn-rent:hover {
+  background: #F5F5F5;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.navbar-brand {
+  color:#F5F5F5;
+}
+
+.navbar-nav {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-group {
+  gap: 20px;
+}
+
+.logo-group:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+}
+
+.dropdown-menu {
+  background-color: transparent;
+  color: white;
 }

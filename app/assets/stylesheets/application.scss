@@ -2,6 +2,7 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300..700&display=swap');
 
 // External libraries
 @import "bootstrap";
@@ -12,6 +13,36 @@
 
 //homepage
 @import "pages/index";
+@import "pages/showuser";
+@import "pages/home";
+
+
+// .animated-link {
+//   position: relative;
+//   color: #1e975f;
+//   text-decoration: none;
+// }
+
+// .animated-link:hover {
+//   color: #0f603a;
+// }
+
+// .animated-link::before {
+//   content: "";
+//   position: absolute;
+//   display: block;
+//   width: 100%;
+//   height: 2px;
+//   bottom: 0;
+//   left: 0;
+//   background-color: #0f603a;
+//   transform: scaleX(0);
+//   transition: transform 0.3s ease-in-out;
+// }
+
+// .animated-link:hover::before {
+//   transform: scaleX(1);
+// }
 
 //login
 @import "devise/login";

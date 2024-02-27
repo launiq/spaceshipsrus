@@ -24,6 +24,19 @@
       <%= link_to "Return to all spaceships", spaceships_path %>
       <%= link_to "Edit", edit_spaceship_path(@spaceship) %>
       <%= link_to "Delete", spaceship_path(@spaceship), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+      <hr>
+
+      <div class="d-flex">
+        <h3>Would you like to book this spaceship? <strong><%= link_to "Do it here!", new_spaceship_booking_path(@spaceship), class: "animated-link" %></strong></h3>
+      </div>
+      <ul class="list-group">
+        <% @spaceship.bookings.each do |booking| %>
+          <li class="list-group-item">
+            <i class="fa-regular fa-calendar-check"></i> <span style="font-weight: bold;"><%= booking.user.first_name %> <%= booking.user.last_name %></span> has booked this spaceship from <span style="font-weight: bold;"><%= booking.start_date %></span> to <span style="font-weight: bold;"><%= booking.end_date %></span>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

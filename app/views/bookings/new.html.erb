@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark bg-gradient px-5">
+  <%= link_to spaceship_path(@spaceship), class: "btn btn-outline-light" do %>
+    <i class="fa-solid fa-rotate-left"></i> Return
+  <% end %>
+</nav>
+
+<div class="container mt-5 py-5 bg-light border rounded shadow-sm">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2><strong>Book <span style="text-transform: uppercase;"><%= @spaceship.name %></span> now! </strong>🚀</h2>
+        <hr class="mb-3">
+        <h5 class="mb-4">Set the dates for your reservation:</h5>
+        <%= simple_form_for [@spaceship, @booking] do |f| %>
+          <div class="d-flex gap-3">
+            <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+            <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+          </div>
+          <%= f.button :submit, class: 'btn btn-sm btn-success' %>
+        <% end %>
+    </div>
+  </div>
+</div>
