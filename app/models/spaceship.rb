@@ -3,7 +3,7 @@ class Spaceship < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   validates :name, :location, :cost, presence: true
-  has_one_attached :image_url
+  has_one_attached :photo
 
   include PgSearch::Model
 

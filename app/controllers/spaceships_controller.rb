@@ -26,6 +26,7 @@ class SpaceshipsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+
   end
 
   def edit
@@ -48,7 +49,7 @@ class SpaceshipsController < ApplicationController
   private
 
   def spaceship_params
-    params.require(:spaceship).permit(:name, :location, :cost, :image_url)
+    params.require(:spaceship).permit(:name, :location, :cost, :photo)
   end
 
   def set_spaceship

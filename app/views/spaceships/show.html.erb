@@ -9,7 +9,11 @@
   <div class="row">
     <div class="col-7">
       <div class="img-box">
-        <%= cl_image_tag(@spaceship.image_url) %>
+        <% if @spaceship.photo.attached? %>
+          <%= cl_image_tag @spaceship.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= image_tag "spaceship-placeholder.jpg", height: 300, width: 400 %>
+        <% end%>
       </div>
       <hr style="color: transparent;">
       <div class="descript-box">
