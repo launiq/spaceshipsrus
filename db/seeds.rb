@@ -27,6 +27,7 @@ def fetch_random_rocket_image_url
 end
 
 p "creating 20 users"
+p "creating 20 users"
 
 
 20.times do
