@@ -16,6 +16,7 @@
 require 'faker'
 require 'net/http'
 require 'json'
+require 'open-uri'
 
 def fetch_random_rocket_image_url
   access_key = 'QtdL7d3ZYdpYG93LRVTz69p6guthSgo0qF5qnRJYrM4'
@@ -25,15 +26,9 @@ def fetch_random_rocket_image_url
   data['urls']['regular']
 end
 
-# Rocket.create(..... image_url: fetch_random_rocket_image_url....)
-
-##SUDO
-# create 10 users
-# create 10 spaceships
-# for each user, create 1 spaceship
+p "creating 20 users"
 
 
-p "creating 10 users"
 20.times do
   user = User.new(
     first_name:             Faker::Name.first_name,
@@ -44,21 +39,15 @@ p "creating 10 users"
     password_confirmation:  "123456"
   )
   user.save!
-  # puts "First Name:\t\t#{user.first_name}\n \
-  #     Last Name:\t\t#{user.last_name}\n \
-  #     Email:\t\t#{user.email}\n\n"
-end
-
-for user in User.all
+  file = URI.open(fetch_random_rocket_image_url)
   spaceship = Spaceship.new(
     location:           Faker::Space.star_cluster,
     name:               Faker::Space.launch_vehicle,
     cost:               rand(1000..10000),
-    user:               user,
-    # image_url:          fetch_random_rocket_image_url
-  )
+    user:               user
+    )
+  spaceship.photo.attach(io: file, filename: "#{Faker::Space.launch_vehicle}.jpg", content_type: 'image/jpg')
   spaceship.save!
-  # puts " Spaceship name:\t\t#{spaceship.name}\n
-  #     Cost:\t\t#{spaceship.cost}\n
-  #     Owner:\t\t#{user.first_name}\n\n"
 end
+
+p "creating 10 spaceships for each user DONE!"

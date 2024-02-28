@@ -20,9 +20,9 @@
           <%= link_to spaceship_path(spaceship), class: "spaceship-card-link" do %>
             <div class="card">
               <% if spaceship.photo.attached? %>
-                <%= cl_image_tag spaceship.photo.key, height: 300, width: 400, crop: :fill %>
+                <%= cl_image_tag spaceship.photo.key, height: 250, width: 411, crop: :fill %>
               <% else %>
-                <%= image_tag "spaceship-placeholder.jpg", height: 300, width: 400 %>
+                <%= image_tag "spaceship-placeholder.jpg", height: 250, width: 411 %>
               <% end%>
               <%#= image_tag spaceship.image_url , class: "spaceship-image" %>
               <div class="card-body">
