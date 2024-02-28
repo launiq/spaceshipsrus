@@ -22,7 +22,7 @@
               <% if spaceship.photo.attached? %>
                 <%= cl_image_tag spaceship.photo.key, height: 250, width: 411, crop: :fill %>
               <% else %>
-                <%= image_tag "spaceship-placeholder.jpg", height: 250, width: 411 %>
+                <%= cl_image_tag "https://res.cloudinary.com/dikukph02/image/upload/v1709122519/development/9o6kky2q78jhs4snjuj9dnro0t5x.jpg", height: 250, width: 411, crop: :fill %>
               <% end%>
               <%#= image_tag spaceship.image_url , class: "spaceship-image" %>
               <div class="card-body">
