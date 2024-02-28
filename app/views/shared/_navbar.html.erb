@@ -8,9 +8,7 @@
       <% end %>
     </div>
 
-    <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "icons8-spaceship-100.png" %>
-    <% end %>
+
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,9 +27,9 @@
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-              <%= link_to "My profile", users_show_path, class: "dropdown-item" %>
+              <%= link_to "My profile", users_show_path, class: "btn-dropedown" %>
 
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-dropedown" %>
             </div>
           </li>
         <% else %>
